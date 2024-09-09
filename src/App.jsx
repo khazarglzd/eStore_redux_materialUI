@@ -1,9 +1,14 @@
 import React from 'react'
 import "./App.css"
+import Header from './components/Header'
+import PageContainer from './container/PageContainer'
 
 const App = () => {
   return (
-    <div>App</div>
+    <PageContainer>
+      <Header />
+    </PageContainer>
+
   )
 }
 
