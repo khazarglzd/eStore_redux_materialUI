@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from "axios"
 
 const initialState = {
@@ -22,12 +22,23 @@ export const productSlice = createSlice({
     name: 'product',
     initialState,
     reducers: {
-
-    }
-},
+        setSelectedProduct: (state, action) => {
+            state.selectedProduct = action.payload
+        }
+    },
+    extraReducers: (builder) => {
+        builder.addCase(getALlProducts.pending, (state, action) => {
+            state.loading = true
+        })
+        builder.addCase(getALlProducts.fulfilled, (state, action) => {
+            state.loading = false
+            state.products = action.payload
+        })
+    },
+}
 )
 
 
-export const { } = productSlice.actions
+export const { setSelectedProduct } = productSlice.actions
 
 export default productSlice.reducer
