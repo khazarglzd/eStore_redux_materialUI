@@ -1,0 +1,84 @@
+.prd-dtl-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.prd-dtl-right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 0px 0px 40px;
+}
+
+.prd-dtl-count-div {
+  display: flex;
+
+  align-items: center;
+  flex-direction: row;
+}
+
+.addToCart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  background-color: #24ace3;
+  color: white;
+  border: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 300px;
+  height: 50px;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.addToCart:hover {
+  background-color: #24ace3;
+  transition: all 0.3s;
+  color: white;
+  cursor: pointer;
+  border: none;
+  box-shadow: #fea530 0px 3px 8px;
+}
+
+.prd-dtl-image {
+  width: 400px;
+  height: 500px;
+}
+
+.prd-dtl-icons {
+  width: 40px;
+  height: 40px;
+  color: #24ace3;
+}
+.prd-dtl-icons:hover {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  transition: 0.3s all;
+}
+
+.prd-dtl-count-amount {
+  font-size: 30px;
+  margin: 8px;
+  color: #24ace3;
+}
+
+.prd-dtl-price {
+  font-size: 45px;
+  color: #ed9117;
+}
+
+.prd-dtl-description {
+  font-size: 20px;
+  color: #0c90c4;
+}
+
+.prd-dtl-title {
+  font-size: 40px;
+  color: #005c80;
+}
