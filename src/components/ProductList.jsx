@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getALlProducts } from '../redux/slices/productSlice';
 import Product from './Product';
-import "../css/Product.css"
 
 
 const ProductList = () => {

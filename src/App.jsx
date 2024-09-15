@@ -1,18 +1,19 @@
-import React from 'react'
-import "./App.css"
+import './App.css'
 import Header from './components/Header'
-import PageContainer from './container/PageContainer'
-import ProductList from './components/ProductList'
 import Loading from './components/Loading'
+import RouterConfig from './config/RouterConfig'
+import PageContainer from './container/PageContainer'
 
-const App = () => {
+function App() {
+
   return (
-    <PageContainer>
-      <Loading />
-      <Header />
-      <ProductList />
-    </PageContainer>
-
+    <>
+      <PageContainer>
+        <Loading />
+        <Header />
+        <RouterConfig />
+      </PageContainer>
+    </>
   )
 }
 
