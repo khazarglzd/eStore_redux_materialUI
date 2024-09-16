@@ -4,9 +4,13 @@ import { CiSearch } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
 import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Header = () => {
+
+    const navigate = useNavigate()
 
     const [theme, setTheme] = useState(false)
 
@@ -25,7 +29,7 @@ const Header = () => {
 
     return (
         <div className='header-container'>
-            <img className='logo' src="./src/images/logo.png" alt="" />
+            <img className='logo' src="./src/images/logo.png" alt="" onClick={() => navigate("/")} />
             <div className='search-div'>
                 <CiSearch className='icons' />
                 <input className='search-input' type="text" placeholder='Searh something...' />
@@ -37,7 +41,11 @@ const Header = () => {
                             <CiDark className='icons' onClick={changeTheme} />
                     }
                 </div>
-                <CiShoppingCart className='icons' />
+                <div className='basketArea'>
+                    <span className='badge'>4</span>
+                    <CiShoppingCart className='icons' />
+                </div>
+
             </div>
         </div>
     )
