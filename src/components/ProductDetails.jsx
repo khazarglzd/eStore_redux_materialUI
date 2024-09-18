@@ -5,6 +5,7 @@ import { setSelectedProduct } from '../redux/slices/productSlice';
 import "../../src/css/ProductDetails.css"
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
+import { addToBasket } from '../redux/slices/basketSlice';
 
 const ProductDetails = () => {
 
@@ -33,6 +34,20 @@ const ProductDetails = () => {
         }
     }
 
+    const addBasket = () => {
+        const payload = {
+            id,
+            price,
+            image,
+            title,
+            description,
+            count
+        }
+
+        dispatch(addToBasket(payload))
+    }
+
+
     const getProductById = () => {
         products && products.map((product) => {
             if (product.id == id) {
@@ -53,7 +68,7 @@ const ProductDetails = () => {
                     <p className='prd-dtl-count-amount'>{count}</p>
                     <CiCirclePlus onClick={increment} className='prd-dtl-icons' />
                 </div>
-                <button className='addToCart'>Add to Cart
+                <button onClick={addBasket} className='addToCart'>Add to Cart
                 </button>
             </div>
         </div>
