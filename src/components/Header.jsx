@@ -5,12 +5,15 @@ import { CiShoppingCart } from "react-icons/ci";
 import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
 const Header = () => {
 
     const navigate = useNavigate()
+
+    const { products } = useSelector((store) => store.basket)
 
     const [theme, setTheme] = useState(false)
 
@@ -41,8 +44,8 @@ const Header = () => {
                             <CiDark className='icons' onClick={changeTheme} />
                     }
                 </div>
-                <div className='basketArea'>
-                    <span className='badge'>4</span>
+                <div>
+                    {products.length > 0 && <span className='badge'>{products.length}</span>}
                     <CiShoppingCart className='icons' />
                 </div>
 

@@ -27,7 +27,10 @@ export const basketSlice = createSlice({
             const findProduct = state.products && state.products.find((product) =>
                 product.id === action.payload.id);
             if (findProduct) {
-
+                const extractedProducts = state.products.filter((product) => product.id != action.payload.id)
+                findProduct.count += action.payload.count;
+                state.products = [...extractedProducts, findProduct];
+                writeFromBasketToStorage(state.products)
             } else {
                 state.products = [...state.products, action.payload]
                 writeFromBasketToStorage(state.products)

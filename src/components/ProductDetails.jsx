@@ -13,7 +13,7 @@ const ProductDetails = () => {
     const { id } = useParams();
     const { products, selectedProduct } = useSelector((store) => store.product)
     const { title, price, description, image } = selectedProduct
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
 
     const dispatch = useDispatch();
 

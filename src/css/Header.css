@@ -79,6 +79,11 @@
   position: relative;
 }
 
+.basketArea:hover {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
 .badge {
   margin-top: 3px;
   margin-left: 25px;
