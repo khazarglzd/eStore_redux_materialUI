@@ -3,8 +3,12 @@ import Header from './components/Header'
 import Loading from './components/Loading'
 import RouterConfig from './config/RouterConfig'
 import PageContainer from './container/PageContainer'
+import Drawer from '@mui/material/Drawer';
+import { useSelector } from 'react-redux'
 
 function App() {
+
+  const { products } = useSelector((store) => store.basket)
 
   return (
     <>
@@ -12,6 +16,19 @@ function App() {
         <Loading />
         <Header />
         <RouterConfig />
+        <Drawer className='drawer' open={true} anchor="right" >
+          {
+            products && products.map((product) => {
+              return (
+                <div className='flex-row'>
+                  <img src={product.image} width={50} height={50} />
+                  <p>{product.title}({product.count})</p>
+                  <p>{product.price}</p>
+                </div>
+              )
+            })
+          }
+        </Drawer>
       </PageContainer>
     </>
   )
