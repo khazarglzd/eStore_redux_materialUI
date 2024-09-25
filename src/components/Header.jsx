@@ -5,7 +5,8 @@ import { CiShoppingCart } from "react-icons/ci";
 import { CiDark } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { setDrawer } from '../redux/slices/basketSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
@@ -16,6 +17,8 @@ const Header = () => {
     const { products } = useSelector((store) => store.basket)
 
     const [theme, setTheme] = useState(false)
+
+    const dispatch = useDispatch()
 
     const changeTheme = () => {
         const root = document.getElementById("root")
@@ -44,9 +47,9 @@ const Header = () => {
                             <CiDark className='icons' onClick={changeTheme} />
                     }
                 </div>
-                <div>
+                <div  >
                     {products.length > 0 && <span className='badge'>{products.length}</span>}
-                    <CiShoppingCart className='icons' />
+                    <CiShoppingCart className='icons' onClick={() => dispatch(setDrawer())} />
                 </div>
 
             </div>
