@@ -1,0 +1,90 @@
+.drawer-container {
+  width: 500px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.drw-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 480px;
+  height: 100px;
+  margin: 8px;
+  box-shadow: #24ace3 0px 2px 5px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 15px;
+}
+
+.drw-list:hover {
+  width: 485px;
+  height: 105px;
+  transition: all 0.4s;
+  cursor: pointer;
+  box-shadow: #fea530 0px 3px 8px;
+}
+
+.drw-prd-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.drw-amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 20px;
+  font-size: 24px;
+  color: #0c90c4;
+}
+
+.drw-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 200px;
+  overflow: hidden;
+}
+
+.drw-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 80px;
+}
+
+.drw-img {
+  display: flex;
+  width: 60px;
+  height: 75px;
+}
+
+.drw-remowe {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background-color: #fea530;
+  color: white;
+  border: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 80px;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.drw-remowe:hover {
+  background-color: #ff0202;
+  transition: all 0.3s;
+  color: white;
+  cursor: pointer;
+  border: none;
+  box-shadow: #ff0202 0px 1px 5px;
+}

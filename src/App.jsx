@@ -7,6 +7,7 @@ import Drawer from '@mui/material/Drawer';
 import { calculateBasket, setDrawer } from './redux/slices/basketSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from "react"
+import "./css/Basket.css"
 
 function App() {
 
@@ -24,21 +25,25 @@ function App() {
         <Loading />
         <Header />
         <RouterConfig />
-        <Drawer className='drawer' open={drawer} onClose={() => dispatch(setDrawer())} anchor="right" >
+        <Drawer open={drawer} onClose={() => dispatch(setDrawer())} anchor="right" >
           {
             products && products.map((product) => {
               return (
-                <div className='flex-row'>
-                  <img src={product.image} width={50} height={50} />
-                  <p>{product.title}({product.count})</p>
-                  <p>{product.price}</p>
-                  <button>Remove</button>
+                <div className='drawer-container'>
+                  <div className='drw-list'>
+                    <img className='drw-img' src={product.image} />
+                    <div className="drw-prd-info">
+                      <p className='drw-title'>{product.title} ({product.count})</p>
+                      <p className='drw-price'>{product.price} $</p>
+                    </div>
+                    <button className='drw-remowe'>Remove</button>
+                  </div>
                 </div>
               )
             })
           }
           <div>
-            <p>Total Amount: {totalAmount}$</p>
+            <p className='drw-amount'>Total Amount: {totalAmount} $</p>
           </div>
         </Drawer>
       </PageContainer>
