@@ -5,7 +5,7 @@ import { setSelectedProduct } from '../redux/slices/productSlice';
 import "../../src/css/ProductDetails.css"
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
-import { addToBasket } from '../redux/slices/basketSlice';
+import { addToBasket, calculateBasket } from '../redux/slices/basketSlice';
 
 const ProductDetails = () => {
 
@@ -45,6 +45,7 @@ const ProductDetails = () => {
         }
 
         dispatch(addToBasket(payload))
+        dispatch(calculateBasket())
     }
 
 
